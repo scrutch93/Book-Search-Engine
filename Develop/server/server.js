@@ -7,6 +7,10 @@ const db = require('./config/connection');
 const routes = require('./routes');
 
 server.applyMiddleware({ app });
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
 
 
 const app = express();
