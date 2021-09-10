@@ -24,7 +24,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    profiles: {}
+   users: [User]!
+   user(userId: ID!): User
   }
   
   input BookInput {
@@ -43,7 +44,7 @@ const typeDefs = gql`
   login(email: String!, password: String!): Auth
 
   saveBook(authors: [String], description: String!, title: String!, bookId: ID!, image: String, link: String!): User
-  removeBook(bookID: ID!): Username
+  removeBook(bookID: ID!): User
   }
   `;
 
